@@ -78,6 +78,7 @@ print("[system] connecting to chat server ...")
 i = input("input username who has .pem file: ")
 cert = i + ".pem"
 key = i + "key.pem"
+
 x = SetupSslContext(cert,key) #SSL setup
 
 connStream = x.wrap_socket(socket.socket(socket.AF_INET, socket.SOCK_STREAM), server_side=False) #SSL wrap

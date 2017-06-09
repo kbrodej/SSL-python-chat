@@ -112,6 +112,7 @@ clientsLock = threading.Lock()
 while True:
     try:
         clientSock, clientAddr = serverSocket.accept()
+
         try:
             connStream = mySslCtx.wrap_socket(clientSock, server_side=True) #SSL wrap
             certData = connStream.getpeercert()
